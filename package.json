@@ -1,0 +1,28 @@
+{
+	"name": "ApplicationDashboard",
+	"version": "0.0.2",
+	"description": "Collect custom application stats and broadcast them via socket.io to html dashboard. ",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": "",
+	"keywords": [
+		"stats",
+		"dashboard"
+	],
+	"author": "H.W.Risser",
+	"license": "BSD",
+	"engines": {
+		"node": ">=0.8.9"
+	},
+    "private": true,
+    "dependencies": {
+        "socket.io": ">= 0.9.13",
+        "express": ">= 3.1.0"
+    },
+    "repository": {
+    	"type": "git",
+        "url": "https://github.com/HeikoR/ApplicationDashboard.git"
+    }
+}

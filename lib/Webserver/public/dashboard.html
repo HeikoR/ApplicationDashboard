@@ -1,0 +1,102 @@
+<!--
+ Description  : Minimal dashboad implementation
+ Author/s     : Heiko Risser
+ Date Created : 2013-02-15
+ Date Modified: 2013-02-15
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <!-- // <script src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js"></script> -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="jQuery.js"></script>
+        <script src="dashboard.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                const COLLECTOR_URL = 'http://localhost:7080';
+
+                // each bindings key maps to a incoming data key (e.g we receive data = { hello: 'value'}, then our key should also be named hello)
+                // id       - this maps a data key to a DOM element that should be updated when new data arrives for that data-key
+                //          - if 'id' is omitted, then and id will be created by concatenating 'namespace' + bindings-key 
+                // label    - text to be displayed above a data-value for given bindings-key
+                //          - if omitted, then the bindings-key will be used as label
+                // newLine  - if specified, and true, then this will force a line-break in html content andn the following items will start on a new line
+                var bindings = {
+                    numLogins: { type: 'counter', newLine: true },
+                    loginTime: { label: 'LoginTime', type: 'timer', show: ['count', 'min', 'max', 'ave', 'maxInfo'], newLine: true},
+                    counter: { id: 'namespace-counter', label: 'Slot Games Played', type: 'counter' },
+                    gamesPlayed: { id: 'namespace-bingoGamesPlayed', label: 'Bingo Games Played', type: 'counter' }
+                };
+                var dashboard = new Dashboard(bindings);
+
+				initComms(COLLECTOR_URL, dashboard.onData.bind(dashboard)); 
+            });
+        </script>
+        <link rel="stylesheet" href="dashboard.css" type="text/css" media="screen" /> 
+    </head>
+    <body>
+    	<div id="dashboard">
+    		<div id="dashboardTitle">Dashboard</div>
+
+
+<!--             <div class="block timer">
+                <div>
+                    <div class='valuelbl'>Login Time - </div><div id="namespace-loginTime" class="value"></div>
+                </div>
+                <div>
+                    <div class='valuelbl'>Count</div><div class="value">12</div>
+                </div>
+                <div>
+                    <div class='valuelbl'>Min</div><div class="value">30</div>
+                </div>
+                <div>
+                    <div class='valuelbl'>Max</div><div class="value">55</div>
+                </div>
+                <div>
+                    <div class='valuelbl'>Ave</div><div class="value">43</div>
+                </div>
+                <div>
+                    <div class='valuelbl'>Max Description</div><div class="value">UID: 23, Time: 2013-02-17 12h00</div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+ -->
+<!--     	
+        	<div class="block">
+		    	<div class='valuelbl'>Logins</div><div id="namespace-numLogins" class="value">20</div>
+    		</div>
+    		<div class="block">
+		    	<div class='valuelbl'>Ave LoginTime</div><div class="value">20ms</div>
+    		</div>
+    		<div class="block">
+		    	<div class='valuelbl'>Max LoginTime</div><div class="value">3000ms</div>
+    		</div>
+            <div style="clear: both;"></div>
+    		<div class="block">
+		    	<div class='valuelbl'>Slot Games Played</div><div id="namespace-counter" class="value">4530</div>
+    		</div>
+            <div style="clear: both;"></div>
+    		<div class="block">
+		    	<div class='valuelbl'>Bingo Games Played</div><div class="value">530</div>
+    		</div>
+ -->    	
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+
+html 				{ background-color: #c4ba77; }
+body				{ position: relative; }
+html, body			{ height: 100%; margin: 0px; padding: 0px; width: 100%; }
+
+/* ----------------	Main gray outer dashboard area */
+#dashboard			{ border: 2px solid #111111; border-radius: 12px; background-color: #333333; margin: 10px; padding: 8px;}
+#dashboard			{ -webkit-box-shadow:  3px 3px 5px 1px rgba(0, 0, 0, 0.55); }
+#dashboard			{ box-shadow:  3px 3px 5px 1px rgba(0, 0, 0, 0.55); }
+#dashboard			{ bottom: 10px; left: 10px; position: absolute; right: 10px; top: 10px; }
+#dashboard 			{
+					background: rgb(58,60,64); /* Old browsers */
+					background: -moz-linear-gradient(top,  rgba(58,60,64,1) 0%, rgba(28,28,28,1) 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(58,60,64,1)), color-stop(100%,rgba(28,28,28,1))); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top,  rgba(58,60,64,1) 0%,rgba(28,28,28,1) 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top,  rgba(58,60,64,1) 0%,rgba(28,28,28,1) 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(top,  rgba(58,60,64,1) 0%,rgba(28,28,28,1) 100%); /* IE10+ */
+					background: linear-gradient(to bottom,  rgba(58,60,64,1) 0%,rgba(28,28,28,1) 100%); /* W3C */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a3c40', endColorstr='#1c1c1c',GradientType=0 ); /* IE6-9 */
+					}
+
+
+#dashboardTitle		{ color: white; font-size: 40px; font-weight: bolder; margin: 0 0 12px 0; text-align: center; width: 100%; }
+#dashboardTitle		{ text-shadow: 3px 3px 2px #111111; filter: dropshadow(color=#111111, offx=3, offy=3); }
+
+/* ----------------	Main content section encapsulating a label and value field */
+.block				{ float: left; }
+.block				{ border: 1px solid #222222; margin: 5px; padding: 5px; }
+.block				{ box-shadow: inset 0px 0px 2px 2px rgba(68,68,68, 0.5); -webkit-box-shadow: inset 0px 0px 2px 2px rgba(68,68,68,0.5); }
+.block 				{
+					background: rgb(17,17,17); /* Old browsers */
+					background: -moz-linear-gradient(top,  rgba(17,17,17,1) 0%, rgba(33,33,33,1) 13%, rgba(53,53,53,1) 25%, rgba(38,38,38,1) 37%, rgba(17,17,17,1) 50%, rgba(0,0,0,1) 51%, rgba(25,25,25,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(17,17,17,1)), color-stop(13%,rgba(33,33,33,1)), color-stop(25%,rgba(53,53,53,1)), color-stop(37%,rgba(38,38,38,1)), color-stop(50%,rgba(17,17,17,1)), color-stop(51%,rgba(0,0,0,1)), color-stop(60%,rgba(25,25,25,1)), color-stop(76%,rgba(43,43,43,1)), color-stop(91%,rgba(28,28,28,1)), color-stop(100%,rgba(19,19,19,1))); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top,  rgba(17,17,17,1) 0%,rgba(33,33,33,1) 13%,rgba(53,53,53,1) 25%,rgba(38,38,38,1) 37%,rgba(17,17,17,1) 50%,rgba(0,0,0,1) 51%,rgba(25,25,25,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top,  rgba(17,17,17,1) 0%,rgba(33,33,33,1) 13%,rgba(53,53,53,1) 25%,rgba(38,38,38,1) 37%,rgba(17,17,17,1) 50%,rgba(0,0,0,1) 51%,rgba(25,25,25,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(top,  rgba(17,17,17,1) 0%,rgba(33,33,33,1) 13%,rgba(53,53,53,1) 25%,rgba(38,38,38,1) 37%,rgba(17,17,17,1) 50%,rgba(0,0,0,1) 51%,rgba(25,25,25,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* IE10+ */
+					background: linear-gradient(to bottom,  rgba(17,17,17,1) 0%,rgba(33,33,33,1) 13%,rgba(53,53,53,1) 25%,rgba(38,38,38,1) 37%,rgba(17,17,17,1) 50%,rgba(0,0,0,1) 51%,rgba(25,25,25,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* W3C */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+}
+
+/*
+	Note: 	We need to keep valuelbl and value same height - thus we specify fixed height, since lbl text is set smaller.
+			If we don't do this then the text fields won't overlay the gradient fields properly
+*/
+.value, .valuelbl	{ font-family: Arial, "Courier New", Consolas; font-weight: bold; }
+.value, .valuelbl	{ border: 0px solid red; height: 30px;}
+.valuelbl			{ color: #777777; font-size: 22px; }
+.valuelbl			{ padding: 5px 8px; }
+.valuelbl			{ text-shadow: 1px 1px 1px #111111; filter: dropshadow(color=#111111, offx=3, offy=3); }
+.value				{ color: #00ee00; font-size: 26px; }
+.value				{ padding: 8px 8px 2px 8px; text-align: center; vertical-align: middle; }
+/*.value				{ text-shadow:0 0 3px #42bf38; }*/
+
+
+.timerhdr			{ margin-right: 0;}	
+.timer				{ margin-left: 0; margin-right: 0;}	
+/*.timer > div		{ float: left; }*/
+
+
+
+
+
+

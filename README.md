@@ -26,13 +26,29 @@ Currently only supports the following 2 metrics:
 
 - See the examples folder for examples on how to create and use the modules.
 - See comments and examples in code.
+- See minimal example below:
+
+		var dash = require ('ApplicationDashboard')
+
+		var stats = dash.stats.createServer(9090);
+		stats.addCounter('numLogins', 'Player Logins').inc(5);
+		stats.addCounter('gamesPlayed', 'Games Played').inc(53);
+
+		// Configure webport to 7080, 
+		// collector update interval to 5 seconds, 
+		// and stats server url as localhost:9090
+		dash.WebServer(7080).startCollector(5000, { hostname: 'localhost', port: 9090});
+
+
+__Note:__ The `dashboard.html` file currently relies on the server to be configured to port `7080`. If this is changed, 
+then update the _socket.io URL_ to new port (inside `dashboard.html`). 
 
 ## Todo
 
 - Lots :)
 - Will add features as required.
-- NEED TO WRAP WEBSERVER SO THAT IT DOESN'T LOAD BY DEFAULT - Currently the code is still global, so just doing a require will
-  start the server.
+- Need to find a better way to manage/create/host the public webserver folder.
+  
 
 ## npm install from github repo
 

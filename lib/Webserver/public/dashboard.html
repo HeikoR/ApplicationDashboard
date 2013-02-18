@@ -25,10 +25,10 @@
                 //          - if omitted, then the bindings-key will be used as label
                 // newLine  - if specified, and true, then this will force a line-break in html content andn the following items will start on a new line
                 var bindings = {
-                    numLogins: { type: 'counter', newLine: true },
-                    loginTime: { label: 'LoginTime', type: 'timer', show: ['count', 'min', 'max', 'ave', 'maxInfo'], newLine: true},
-                    counter: { id: 'namespace-counter', label: 'Slot Games Played', type: 'counter' },
-                    gamesPlayed: { id: 'namespace-bingoGamesPlayed', label: 'Bingo Games Played', type: 'counter' }
+                    numLogins:      { type: 'counter', newLine: true },
+                    loginTime:      { label: 'LoginTime', type: 'timer', show: ['count', 'min', 'max', 'ave', 'maxInfo'], newLine: true},
+                    counter:        { label: 'Slot Games Played', type: 'counter' },
+                    gamesPlayed:    { label: 'Bingo Games Played', type: 'counter' }
                 };
                 var dashboard = new Dashboard(bindings);
 

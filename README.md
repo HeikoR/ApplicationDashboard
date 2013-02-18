@@ -31,6 +31,16 @@ Currently only supports the following 2 metrics:
 
 - Lots :)
 - Will add features as required.
+- NEED TO WRAP WEBSERVER SO THAT IT DOESN'T LOAD BY DEFAULT - Currently the code is still global, so just doing a require will
+  start the server.
+
+## npm install from github repo
+
+`npm install https://github.com/HeikoR/ApplicationDashboard/archive/master.tar.gz`
+
+Then you can run test script by calling the following:
+
+`require('ApplicationDashboard\\examples\\create-simple-webserver');`
 
 
 

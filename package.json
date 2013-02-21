@@ -1,8 +1,9 @@
 {
 	"name": "ApplicationDashboard",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"description": "Collect custom application stats and broadcast them via socket.io to html dashboard. ",
-	"main": "index.js",
+	"main": "./index.js",
+	"homepage": "https://github.com/HeikoR/ApplicationDashboard",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -25,5 +26,8 @@
     "repository": {
     	"type": "git",
         "url": "https://github.com/HeikoR/ApplicationDashboard.git"
-    }
+    },
+	"engines": {
+		"node": ">= 0.8.0"
+	}
 }

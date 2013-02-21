@@ -1,0 +1,8 @@
+README.html
+npm-debug.log
+node_modules
+.*.swp
+.git
+.nodemonignore
+markdown.css
+

@@ -1,6 +1,6 @@
 {
 	"name": "ApplicationDashboard",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Collect custom application stats and broadcast them via socket.io to html dashboard. ",
 	"main": "index.js",
 	"scripts": {
@@ -21,6 +21,7 @@
         "socket.io": ">= 0.9.13",
         "express": ">= 3.1.0"
     },
+	"readme": "# ApplicationDashboard\n\nComprised of 3 modules. A stats module, a collector module, and a dashboard hosting webserver.\n\nCollect custom application stats and broadcast them via socket.io to html dashboard.\n\n\n\n\n",
     "repository": {
     	"type": "git",
         "url": "https://github.com/HeikoR/ApplicationDashboard.git"

@@ -30,15 +30,40 @@ Currently only supports the following 2 metrics:
 
 		var dash = require ('ApplicationDashboard')
 
+		// ------------------------------------------------------------------------------------------------
+		// Listen on port 9090, and reply stats summary on any request received.
 		var stats = dash.stats.createServer(9090);
-		stats.addCounter('numLogins', 'Player Logins').inc(5);
-		stats.addCounter('gamesPlayed', 'Games Played').inc(53);
 
+		// ------------------------------------------------------------------------------------------------
+		// Create 2 counters: numLogins and gamesPlayed
+		stats.addCounter('numLogins', 'Player Logins').inc(5);
+		
+		var gamesPlayed = stats.addCounter('gamesPlayed', 'Games Played');
+		gamesPlayed.inc(53);
+		gamesPlayed.reset();
+		gamesPlayed.inc();
+
+		// ------------------------------------------------------------------------------------------------
+		// Create a timer: loginTime
+		// - then measure loginTime for 'player 1'
+		// - then measure loginTime for 'player 2'
+		var loginTime = stats.addTimer('loginTime', 'Player Login Time');
+
+		var thisTimer = loginTime.start('player 1');
+		setTimeout(function() {thisTimer.stop();}, 1500);
+
+		var thisTimer2 = loginTime.start('player 2');
+		setTimeout(function() {thisTimer2.stop();}, 500);
+
+		// ------------------------------------------------------------------------------------------------
 		// Configure webport to 7080, 
-		// collector update interval to 5 seconds, 
-		// and stats server url as localhost:9090
+		// - set collector update interval to 5 seconds, 
+		// - set stats server url as localhost:9090
 		dash.WebServer(7080).startCollector(5000, { hostname: 'localhost', port: 9090});
 
+	- Test stats server using curl and [json-command](http://github.com/zpoley/json-command) for readable formatting.
+
+			curl http://localhost:9090/ 2> null | json
 
 __Note:__ The `dashboard.html` file currently relies on the server to be configured to port `7080`. If this is changed, 
 then update the _socket.io URL_ to new port (inside `dashboard.html`). 
@@ -48,6 +73,11 @@ then update the _socket.io URL_ to new port (inside `dashboard.html`).
 - Lots :)
 - Will add features as required.
 - Need to find a better way to manage/create/host the public webserver folder.
+- Allow  `Timer.stop(...text here...)` function to add text to result. For example:
+
+  		var myTimer = timer.start('Login xyz.');
+  		...
+  		myTimer.stop('Failed with err: blabla');
   
 
 ## npm install from github repo

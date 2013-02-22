@@ -1,5 +1,5 @@
 {
-	"name": "ApplicationDashboard",
+	"name": "application-dashboard",
 	"version": "0.1.0",
 	"description": "Collect custom application stats and broadcast them via socket.io to html dashboard. ",
 	"main": "./index.js",
